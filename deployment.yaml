@@ -19,16 +19,16 @@ Resources:
                 Service: lambda.amazonaws.com
               Action: sts:AssumeRole
       Policies:
-         PolicyName: "youtube-demo-lambda-policy"
-         PolicyDocument:
-           Version: "2012-10-17"
-           Statement:
-              - Effect: "Allow"
-                Action:
-                  - "logs:CreateLogGroup"
-                  - "logs:CreateLogStream"
-                  - "logs:PutLogEvents"
-                Resource: "*"
+         -  PolicyName: "youtube-demo-lambda-policy"
+            PolicyDocument:
+              Version: "2012-10-17"
+              Statement:
+                - Effect: "Allow"
+                  Action:
+                    - "logs:CreateLogGroup"
+                    - "logs:CreateLogStream"
+                    - "logs:PutLogEvents"
+                  Resource: "*"
 
   lambdaFunction:
     Type: AWS::Lambda::Function
