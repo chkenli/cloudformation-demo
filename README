@@ -7,3 +7,5 @@ c:\Development\AWS\cloudformation-demo>aws cloudformation validate-template --te
 
 Github
 https://github.com/rahulpnath/youtube-samples
+
+git remote set-url origin https://github.com/chkenli/cloudformation-demo
