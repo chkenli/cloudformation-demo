@@ -74,5 +74,29 @@ jobs:
           template: artifact/deployment.yaml
           parameter-overrides: "Environment=-Test"
 
+test-prod:
+    runs-on:  ubuntu-latest
+    environment: Prod
+    needs:  build
+
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: lambda
+          path: artifact
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+
+      - name: Deploy to AWS CloudFormation
+        uses: aws-actions/aws-cloudformation-github-deploy@v1
+        with:
+          name: youtube-cloudformation-demo
+          template: artifact/deployment.yaml
+          parameter-overrides: "Environment="
 
     
