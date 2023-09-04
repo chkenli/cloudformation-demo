@@ -1,0 +1,6 @@
+https://www.youtube.com/watch?v=U96230YlSJA
+
+"C://Development/AWS/cloudformation-demo/deployment.yaml"
+
+
+c:\Development\AWS\cloudformation-demo>aws cloudformation validate-template --template-body "file://C:/Development/AWS/cloudformation-demo/deployment.yaml"
