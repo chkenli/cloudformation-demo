@@ -40,7 +40,7 @@ Resources:
               Statement:
                 - Effect: "Allow"
                   Action:
-                    - sqs:RecieveMessage
+                    - sqs:ReceiveMessage
                     - sqs:DeleteMessage
                     - sqs:GetQueueAttributes
                     - sqs:ChangeMessageVisibility
