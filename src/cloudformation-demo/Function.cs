@@ -20,6 +20,7 @@ public class Function
     }
 
 
+
     /// <summary>
     /// This method is called for every Lambda invocation. This method takes in an SQS event object and can be used 
     /// to respond to SQS messages.
@@ -29,7 +30,7 @@ public class Function
     /// <returns></returns>
     public async Task FunctionHandler(SQSEvent evnt, ILambdaContext context)
     {
-        foreach(var message in evnt.Records)
+        foreach (var message in evnt.Records)
         {
             await ProcessMessageAsync(message, context);
         }
